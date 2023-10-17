@@ -22,6 +22,7 @@ tr{
 
 }
 button {
+    display: flex;
     background-color: aquamarine;
     padding: 0.5rem 1rem; /* Adjust padding */
     font-size: 1.5rem; /* Adjust font size */
@@ -81,4 +82,22 @@ button:hover{
     p {
         font-size: 2rem;
     }
+}
+
+.result{
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid ; */
+    
+}
+
+#tableresult th {
+    border: 2px solid ;
+    border-radius: 5px;
+}
+#tableresult td {
+    border: 2px solid ;
+    border-radius: 5px;
 }

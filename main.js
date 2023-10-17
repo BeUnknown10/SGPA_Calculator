@@ -42,22 +42,31 @@ function calculate_SGPA() {
     var mark8 = parseFloat(document.getElementById("marks8").value);
     var point8 = getPointFromMark(mark8);
     console.log(point8);
+
+    var credit9 = parseFloat(document.getElementById("credit9").value);
+    var mark9 = parseFloat(document.getElementById("marks9").value);
+    var point9 = getPointFromMark(mark9);
+    console.log(point9);
     
 
 
 
     var total_credit = credit1 + credit2 + credit3 + credit4 + credit5 + credit6 + credit7 + credit8;
-    var total_points = (credit1 * point1) + (credit2 * point2) + (credit3 * point3) + (credit4 * point4) + (credit5 * point5) + (credit6 * point6) + (credit7 * point7) + (credit8 * point8);
+    var total_points = (credit1 * point1) + (credit2 * point2) + (credit3 * point3) + (credit4 * point4) + (credit5 * point5) + (credit6 * point6) + (credit7 * point7) + (credit8 * point8)+(credit9 * point9);
 
     // total_credit = total_credit.toFixed(4);
     // total_points = total_points.toFixed(4);
 
     var SGPA = (total_points / total_credit).toFixed(2);
 
-    document.getElementById("result").innerText = `Your SGPA is: ${SGPA}`;
+    // document.getElementById("result").innerText = `Your SGPA is: ${SGPA}`;
     var percentage = ((SGPA *10)-SGPA);
 
-    document.getElementById("percentage").innerText = `Your Percentage is: ${percentage}`;
+    // document.getElementById("percentage").innerText = `Congratulation's Your Percentage is: ${percentage}`;
+
+
+    document.getElementById("result").innerText = `${SGPA}`;
+    document.getElementById("percentage").innerText = ` ${percentage}`;
 
     // Clear the input fields without affecting the result paragraph
     // const form = document.getElementById("sgpaForm");
