@@ -1,27 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>Contact Us</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
-<body>
 
-    <div class="container">
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-          </div>
-          <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Enter the mssg</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-          </div>
+<body>
+    <div class="container1">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject:</label>
+                    <input type="text" class="form-control" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" onclick="sendemail()">Submit</button>
+            </form>
+        </div>
     </div>
 
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
 
+    <!-- <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+    <script>
+        function sendemail(){
+                    const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const subject = document.getElementById("subject").value;
+        const message = document.getElementById("message").value;
 
+        
+        Email.send({
+            Host: "smtp.elasticemail.com",
+            Username: "unknownimmortal101@gmail.com",
+            Password: "45DAE26BF19108C48FAA0A78F387AF758ACE",
+            To: 'anonymous10unknown10@gmail.com',
+            From: "unknownimmortal101@gmail.com",
+            Subject: "This is the subject",
+            Body: "And this is the body"
+        }).then(
+            message => alert(message)
+        );
+    }
+    </script> -->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+    document.getElementById("contact-form").addEventListener("submit", function (e) {
+        e.preventDefault(); // Prevent the default form submission behavior
+
+        // Get form data
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const subject = document.getElementById("subject").value;
+        const message = document.getElementById("message").value;
+
+        // Define your SMTP configuration
+        Email.send({
+            SecureToken: "45DAE26BF19108C48FAA0A78F387AF758ACE", // Replace with your secure token
+            To: "unknownimmortal101@gmail.com",
+            From: email,
+            Subject: subject,
+            Body: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
+        }).then(
+            function (message) {
+                if (message === "OK") {
+                    alert("Email sent successfully");
+                } else {
+                    alert("Email failed to send. Please try again.");
+                }
+            }
+        );
+    });
+</script>
+
 </body>
+
 </html>
