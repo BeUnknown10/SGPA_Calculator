@@ -111,6 +111,12 @@ button:hover{
     #percentage{
         padding-left: 3rem;
     }
+
+    #person{
+        position: absolute;
+        left: 90%;
+        right: 0;
+    }
 }
 
 .result1{
