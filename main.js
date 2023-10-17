@@ -51,8 +51,8 @@ function calculate_SGPA() {
 
 
 
-    var total_credit = credit1 + credit2 + credit3 + credit4 + credit5 + credit6 + credit7 + credit8;
-    var total_points = (credit1 * point1) + (credit2 * point2) + (credit3 * point3) + (credit4 * point4) + (credit5 * point5) + (credit6 * point6) + (credit7 * point7) + (credit8 * point8)+(credit9 * point9);
+    var total_credit = credit1 + credit2 + credit3 + credit4 + credit5 + credit6 + credit7 + credit8+credit9;
+    var total_points = (credit1 * point1) + (credit2 * point2) + (credit3 * point3) + (credit4 * point4) + (credit5 * point5) + (credit6 * point6) + (credit7 * point7) + (credit8 * point8)+ (credit9 * point9);
 
     // total_credit = total_credit.toFixed(4);
     // total_points = total_points.toFixed(4);
@@ -67,7 +67,13 @@ function calculate_SGPA() {
 
     document.getElementById("result").innerText = `${SGPA}`;
     document.getElementById("percentage").innerText = ` ${percentage}`;
-
+// ###*******************************************************************##
+    // SGPA1=parseFloat(document.getElementById("result").value);
+grade1=getPointFromSGPA(SGPA);
+document.getElementById("grading").innerText = `${grade1}`;
+console.log=grade1;
+    
+// ##*****************************************************************##
     // Clear the input fields without affecting the result paragraph
     // const form = document.getElementById("sgpaForm");
     // form.reset();
@@ -93,3 +99,34 @@ function getPointFromMark(mark) {
         return 0;
     }
 }
+
+
+
+var S = "S";
+var A = "A";
+var B = "B";
+var C = "C";
+var D = "D";
+var E = "E";
+var F = "F";
+
+
+
+function getPointFromSGPA(SGPA) {
+    if (SGPA >= 10) {
+        return S;
+    } else if (SGPA >= 9) {
+        return A;
+    } else if (SGPA >= 8) {
+        return B;
+    } else if (SGPA >= 7) {
+        return C;
+    } else if (SGPA >= 6) {
+        return D;
+    } else if (SGPA >= 4) {
+        return E;
+    } else {
+        return F;
+    }
+}
+
