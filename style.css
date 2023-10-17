@@ -123,6 +123,7 @@ button:hover{
     
 }
 
+
 #tableresult th {
     border: 2px solid ;
     border-radius: 25px;
@@ -135,3 +136,28 @@ button:hover{
     border-radius: 5px;
 }
 
+.instruction{
+    display: none;
+}
+
+.icon{
+    margin-left: 4rem;
+}
+
+.icon:hover{
+    color: blue;
+    transition: 2ms step-start;
+}
+
+.icon:hover .instruction{
+    display: block;
+}
+
+.instruction p{
+    font-size: 1.5rem;
+    color: rgb(161, 159, 159);
+}
+
+.instruction span{
+    color: rgb(230, 26, 26);
+}
