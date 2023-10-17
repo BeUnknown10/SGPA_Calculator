@@ -73,7 +73,7 @@ grade1=getPointFromSGPA(SGPA);
 document.getElementById("grading").innerText = `${grade1}`;
 console.log=grade1;
 
-document.getElementById("congrats").innerText = `Congratulation`;
+// document.getElementById("congrats").innerText = `Congratulation`;
     
 // ##*****************************************************************##
     // Clear the input fields without affecting the result paragraph

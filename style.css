@@ -125,15 +125,15 @@ button:hover{
 
 
 #tableresult th {
-    border: 2px solid ;
+    border: 2px solid white ;
     border-radius: 25px;
     padding: 9px;
 
 }
 
 #tableresult td {
-    border: 2px solid ;
-    border-radius: 5px;
+    border: 2px solid white ;
+    border-radius: 50px;
 }
 
 .instruction{
@@ -142,6 +142,8 @@ button:hover{
 
 .icon{
     margin-left: 4rem;
+    padding: 0;
+    /* margin: 0; */
 }
 
 .icon:hover{
@@ -159,5 +161,12 @@ button:hover{
 }
 
 .instruction span{
-    color: rgb(230, 26, 26);
+    color: rgb(230, 26, 26,0.6);
+}
+
+/* Person */
+#person{
+    position: absolute;
+    left: 90%;
+    right: 0;
 }
