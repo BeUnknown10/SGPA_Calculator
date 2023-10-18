@@ -9,86 +9,60 @@
 </head>
 
 <body>
-    <div class="container1">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <form id="contact-form">
-                <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" class="form-control" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" class="form-control" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="subject">Subject:</label>
-                    <input type="text" class="form-control" id="subject" name="subject" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message:</label>
-                    <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary" onclick="sendemail()">Submit</button>
-            </form>
-        </div>
+    <div class="container">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="subject">Subject:</label> <!-- Fixed the typo here -->
+                <input type="text" class="form-control" id="subject" name="subject" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
     </div>
 
     <script src="https://smtpjs.com/v3/smtp.js"></script>
-
-    <!-- <script src="https://smtpjs.com/v3/smtp.js">
-    </script>
     <script>
-        function sendemail(){
-                    const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-        const subject = document.getElementById("subject").value;
-        const message = document.getElementById("message").value;
+        document.getElementById("contact-form").addEventListener("submit", function (e) {
+            e.preventDefault(); // Prevent the default form submission behavior
 
-        
-        Email.send({
-            Host: "smtp.elasticemail.com",
-            Username: "unknownimmortal101@gmail.com",
-            Password: "45DAE26BF19108C48FAA0A78F387AF758ACE",
-            To: 'anonymous10unknown10@gmail.com',
-            From: "unknownimmortal101@gmail.com",
-            Subject: "This is the subject",
-            Body: "And this is the body"
-        }).then(
-            message => alert(message)
-        );
-    }
-    </script> -->
+            // Get form data
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const subject = document.getElementById("subject").value;
+            const message = document.getElementById("message").value;
 
-    <script>
-    document.getElementById("contact-form").addEventListener("submit", function (e) {
-        e.preventDefault(); // Prevent the default form submission behavior
-
-        // Get form data
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-        const subject = document.getElementById("subject").value;
-        const message = document.getElementById("message").value;
-
-        // Define your SMTP configuration
-        Email.send({
-            SecureToken: "45DAE26BF19108C48FAA0A78F387AF758ACE", // Replace with your secure token
-            To: "unknownimmortal101@gmail.com",
-            From: email,
-            Subject: subject,
-            Body: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
-        }).then(
-            function (message) {
-                if (message === "OK") {
-                    alert("Email sent successfully");
-                } else {
-                    alert("Email failed to send. Please try again.");
+            // Define your SMTP configuration
+            Email.send({
+                Host: "smtp.elasticemail.com", // Replace with your SMTP host
+                Username: "unknownimmortal101@gmail.com", // Replace with your SMTP username
+                Password: "D04A1ABB961A2D052981D2FC61403A78638A", // Replace with your SMTP password
+                To: "anonymous10unknown10@gmail.com",
+                From: email,
+                Subject: subject,
+                Body: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
+            }).then(
+                function (message) {
+                    if (message === "OK") {
+                        alert("Email sent successfully");
+                    } else {
+                        alert("Email failed to send. Please try again.");
+                    }
                 }
-            }
-        );
-    });
-</script>
-
+            );
+        });
+    </script>
 </body>
 
 </html>
