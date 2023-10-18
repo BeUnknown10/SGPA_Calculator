@@ -4,64 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>Contact Us</title>
+    <link rel="stylesheet" href="contact.css">
 </head>
 
 <body>
     <div class="container">
-        <h2>Contact Us</h2>
-        <form id="contact-form">
-            <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" class="form-control" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" class="form-control" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="subject">Subject:</label> <!-- Fixed the typo here -->
-                <input type="text" class="form-control" id="subject" name="subject" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Message:</label>
-                <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+        <form onsubmit="sendEmail(); reset(); return false;" >
+            <h3>Contact Us</h3>
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="example@gmail.com" required>
+            <input type="tel" id="phone" placeholder="Phone No." required>
+            <textarea id="message" rows="4" placeholder="Enter message Here" required></textarea>
+            <button type="submit">Send</button>
         </form>
     </div>
 
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script>
-        document.getElementById("contact-form").addEventListener("submit", function (e) {
-            e.preventDefault(); // Prevent the default form submission behavior
-
-            // Get form data
-            const name = document.getElementById("name").value;
-            const email = document.getElementById("email").value;
-            const subject = document.getElementById("subject").value;
-            const message = document.getElementById("message").value;
-
-            // Define your SMTP configuration
+        function sendEmail() {
             Email.send({
-                Host: "smtp.elasticemail.com", // Replace with your SMTP host
-                Username: "unknownimmortal101@gmail.com", // Replace with your SMTP username
-                Password: "D04A1ABB961A2D052981D2FC61403A78638A", // Replace with your SMTP password
-                To: "anonymous10unknown10@gmail.com",
-                From: email,
-                Subject: subject,
-                Body: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
+                SecureToken: "0d7f93aa-24ba-49e5-a554-d8e2190d585f",
+                Host: "smtp.elasticemail.com",
+                Username: "unknownimmortal101@gmail.com",
+                Password: "8C23257B5D6EA4FC3EA8E8A4624370621C56",
+                To: 'anonymous10unknown10@gmail.com',
+                From: "unknownimmortal101@gmail.com",
+                Port: 2525, // Use the correct port for your email service provider
+                EnableSsl: true, // Enable SSL/TLS
+
+                Subject: "New Contact Form Enquiry",
+                Body: "Name: " + document.getElementById("name").value +
+                    "<br> Email: " + document.getElementById("email").value +
+                    "<br> Phone No: " + document.getElementById("phone").value +
+                    "<br> Message: " + document.getElementById("message").value
             }).then(
-                function (message) {
-                    if (message === "OK") {
-                        alert("Email sent successfully");
-                    } else {
-                        alert("Email failed to send. Please try again.");
-                    }
-                }
+                message => alert("Message Sent Successfully")
             );
-        });
+        }
     </script>
 </body>
 
