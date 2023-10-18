@@ -1,178 +1,229 @@
-*{
-    margin: 1px;
-    /* padding: 0; */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* padding: 0; */
 }
 
 table {
-    border-collapse: collapse;
-    background-color: lightblue;
-    width: 50%; /* Uncomment this line to span full width */
-    padding: 5px; /* Adjust padding */
-    box-shadow: 38px 38px 15px rgba(0,0,0,0.2);
-    border-radius: 15px; /* Increase or decrease border radius */
-    margin: 0 auto;
-     /* Center the table horizontally */
-     border: none;
+  border-collapse: collapse;
+  background-color: lightblue;
+  width: 50%; /* Uncomment this line to span full width */
+  padding: 5px; /* Adjust padding */
+  box-shadow: 38px 38px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 10px; /* Increase or decrease border radius */
+  margin: 0 auto;
+  /* Center the table horizontally */
+  border: none;
 }
 
 input {
-    border: none;
-    font-size: 2rem; /* Adjust font size */
-    padding: 1px; /* Adjust padding */
-    max-width: 25rem;
+  border: none;
+  font-size: 2rem; /* Adjust font size */
+  padding: 1px; /* Adjust padding */
+  max-width: 25rem;
 }
 
-tr{
-    font-size: 2rem;
-    font-weight: 900;
-
+tr {
+  font-size: 2rem;
+  font-weight: 900;
 }
 button {
-    display: flex;
-    background-color: aquamarine;
-    padding: 0.5rem 1rem; /* Adjust padding */
-    font-size: 1.5rem; /* Adjust font size */
-    font-weight: 700;
-    border-radius: 9px;
-    border: none;
-    margin: 1rem;
-    box-shadow: 18px 18px 10px rgba(0,0,0,0.2);
+  display: flex;
+  background-color: aquamarine;
+  padding: 0.5rem 1rem; /* Adjust padding */
+  font-size: 1.5rem; /* Adjust font size */
+  font-weight: 700;
+  border-radius: 9px;
+  border: none;
+  margin: 1rem;
+  box-shadow: 18px 18px 10px rgba(0, 0, 0, 0.2);
 }
 
-h1{
-    font-size: 4rem;
-    color: rgb(78, 78, 214);
-    margin: 0.5rem;
-    padding: 0;
-
+h1 {
+  font-size: 4rem;
+  color: rgb(78, 78, 214);
+  margin: 0.5rem;
+  padding: 0;
 }
-p{
-    font-size: 2.5rem;
-    color: rgb(16, 241, 166);
-    margin: 0;
-    padding: 0;
-    font-weight: 900;
-    box-shadow: 8px 8px 100px rgba(0,0,0,0.2);
-
+p {
+  font-size: 2.5rem;
+  color: rgb(16, 241, 166);
+  margin: 0;
+  padding: 0;
+  font-weight: 900;
+  /* box-shadow: 8px 8px 10px rgba(0,0,0,0.2); */
 }
 
-
-button:hover{
-    background-color: rgb(239, 241, 240);
- 
+button:hover {
+  background-color: rgb(239, 241, 240);
 }
-#grading{
-    padding-left: 5rem;
+#grading {
+  padding-left: 5rem;
 }
 
-#result{
-    padding-left: 3rem;
+#result {
+  padding-left: 3rem;
 }
-#percentage{
-    padding-left: 9rem;
+#percentage {
+  padding-left: 9rem;
 }
-
 
 @media (max-width: 768px) {
-    /* Adjustments for screens with a max width of 768px */
-    table {
-        width: 100%;
-        margin-right: 5rem; /* Make the table span full width */
-    }
+  /* Adjustments for screens with a max width of 768px */
+  table {
+    width: 100%;
+    margin-right: 5rem; /* Make the table span full width */
+  }
 
-    /* Adjust font sizes for smaller screens */
-    input,
-    tr {
-        font-size: 1.5rem;
-        width: 4rem;
-        margin: 0;
-        /* padding: 0; */
-    }
-    input{
-        width: 8rem;
-        margin-left: 2rem;
-        border-radius: 2px;
-    }
+  /* Adjust font sizes for smaller screens */
+  input,
+  tr {
+    font-size: 1.5rem;
+    width: 4rem;
+    margin: 0;
+    /* padding: 0; */
+  }
+  input {
+    width: 8rem;
+    margin-left: 2rem;
+    border-radius: 2px;
+  }
 
-    h1 {
-        font-size: 3rem;
-    }
+  h1 {
+    font-size: 3rem;
+  }
 
-    p {
-        font-size: 2rem;
-    }
-    #grading{
-        padding-left: 2rem;
-    }
+  p {
+    font-size: 2rem;
+  }
+  #grading {
+    padding-left: 2rem;
+  }
 
-    #result{
-        padding-left: 1rem;
-    }
-    #percentage{
-        padding-left: 3rem;
-    }
-
-    #person{
-        position: absolute;
-        left: 90%;
-        right: 0;
-    }
-}
-
-.result1{
-    margin-left: 5rem;
+  .result1 {
+    margin-left: -2.2rem;
     padding: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* border: 1px solid ; */
-    
+    display: none;
+  }
+
+  #result {
+    padding-right: 1rem;
+  }
+  #percentage {
+    padding-left: 3rem;
+  }
+
+  #person {
+    position: absolute;
+    left: 85%;
+    /* right: 2%; */
+  }
+
+  footer p {
+    color: #333;
+    padding: 0px;
+    text-align: center;
+    font-size: 17px;
+    opacity: 0.7;
+    position: relative;
+    top: 19rem;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+  }
 }
 
+.result1 {
+  /* margin-left: 0rem; */
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  /* border: 1px solid ; */
+}
 
 #tableresult th {
-    border: 2px solid white ;
-    border-radius: 25px;
-    padding: 9px;
-
+  border: 2px solid white;
+  border-radius: 25px;
+  padding: 9px;
 }
 
 #tableresult td {
-    border: 2px solid white ;
-    border-radius: 50px;
+  border: 1px solid rgb(249, 246, 246);
+  border-radius: 50px;
 }
 
-.instruction{
-    display: none;
+.instruction {
+  display: none;
 }
 
-.icon{
-    margin-left: 4rem;
-    padding: 0;
-    /* margin: 0; */
+.icon {
+  /* margin-left: 4rem; */
+  padding: 0;
+  cursor: pointer;
+  /* margin: 0; */
 }
 
-.icon:hover{
-    color: blue;
-    transition: 2ms step-start;
+.icon:hover {
+  color: aqua;
+  transition: 2ms step-start;
 }
 
-.icon:hover .instruction{
-    display: block;
+.icon:hover .instruction {
+  display: block;
 }
 
-.instruction p{
-    font-size: 1.5rem;
-    color: rgb(161, 159, 159);
+.instruction p {
+  font-size: 1rem;
+  color: #333;
+  opacity: 0.8;
+  user-select: none;
 }
 
-.instruction span{
-    color: rgb(230, 26, 26,0.6);
+.instruction span {
+  color: rgb(230, 26, 26, 0.6);
 }
 
 /* Person */
-#person{
-    position: absolute;
-    left: 90%;
-    right: 0;
+#person {
+  position: fixed;
+  color: rgb(57, 57, 204);
+
+  /* left: 90%; */
+  right: 2%;
+  margin-top: 10px;
+  /* margin-left: 1rem; */
+  margin-right: 2rem;
+  /* margin: 2rem; */
+}
+a {
+  color: rgb(24, 24, 195);
+  /* box-shadow: rgba(99, 99, 99, 0.2) 12px 12px 12px; */
+
+}
+
+a :hover {
+  color: aqua;
+}
+
+footer p {
+  color: #333;
+  padding: 0px;
+  text-align: center;
+  font-size: 17px;
+  opacity: 0.7;
+  position: relative;
+  top: 3rem;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
 }

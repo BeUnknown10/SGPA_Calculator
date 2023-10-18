@@ -49,6 +49,7 @@ function calculate_SGPA() {
     console.log(point9);
     
 
+    document.querySelector('.result1').style.display = 'block';
 
 
     var total_credit = credit1 + credit2 + credit3 + credit4 + credit5 + credit6 + credit7 + credit8+credit9;
@@ -82,6 +83,10 @@ console.log=grade1;
 
     // const reset1 = document.getElementById("reset");
     // reset1.reset();
+
+
+
+
 }
 
 function getPointFromMark(mark) {
@@ -131,4 +136,12 @@ function getPointFromSGPA(SGPA) {
         return F;
     }
 }
+
+
+
+
+
+
+
+
 
