@@ -31,7 +31,7 @@ form{
 }
 
 form h3{
-    color: rgb(66, 69, 255);
+    color: rgb(9, 13, 206);
     font-weight: 900;
     margin-bottom: 1rem;
     font-size: 25px;
@@ -93,7 +93,7 @@ form button:hover{
 .connect a{
     margin-right: 10px;
     font-size: 35px;
-
+    
     margin-right: 9px;
     font-size: 35px;
     transition: 1.8s;
