@@ -39,13 +39,13 @@
     </div>
 
     <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script><!-- Sweet Alert -->
     <script>
         function sendEmail() {
             Email.send({
                 SecureToken: "0d7f93aa-24ba-49e5-a554-d8e2190d585f",
-                Host: "smtp.elasticemail.com",
-                Username: "unknownimmortal101@gmail.com",
-                Password: "8C23257B5D6EA4FC3EA8E8A4624370621C56",
+               
                 To: 'anonymous10unknown10@gmail.com',
                 From: "unknownimmortal101@gmail.com",
                 Port: 2525, // Use the correct port for your email service provider
@@ -57,7 +57,16 @@
                     "<br> Phone No: " + document.getElementById("phone").value +
                     "<br> Message: " + document.getElementById("message").value
             }).then(
-                message => alert("Message Sent Successfully")
+                message =>{
+                    if(message='OK'){
+                        swal("Successfull", "Your Message sent successfully", "success");
+                    }
+                    else{
+                        swal("Something Wrong", "Your Message Not sent", "error");
+
+                    }
+                } 
+
             );
         }
     </script>
