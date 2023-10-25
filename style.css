@@ -31,9 +31,9 @@ tr {
   font-weight: 900;
 }
 button {
-  display: flex;
+  /* display: flex; */
   background-color: aquamarine;
-  padding: 0.5rem 1rem; /* Adjust padding */
+  padding: 0.5rem 1rem;  /*Adjust padding */
   font-size: 1.5rem; /* Adjust font size */
   font-weight: 700;
   border-radius: 9px;
@@ -41,6 +41,7 @@ button {
   margin: 1rem;
   box-shadow: 18px 18px 10px rgba(0, 0, 0, 0.2);
 }
+
 
 h1 {
   font-size: 4rem;

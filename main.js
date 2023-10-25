@@ -61,7 +61,7 @@ function calculate_SGPA() {
     var SGPA = (total_points / total_credit).toFixed(2);
 
     // document.getElementById("result").innerText = `Your SGPA is: ${SGPA}`;
-    var percentage = ((SGPA *10)-SGPA);
+    var percentage = ((SGPA *10)-7.5);
 
     // document.getElementById("percentage").innerText = `Congratulation's Your Percentage is: ${percentage}`;
 

@@ -109,10 +109,11 @@
                         </tr>
                     </table>
 
-                    <button type="reset" id="reset">RESET</button>
                 </form>
             </div>
         </div>
+        <button type="reset" id="reset" onclick="refreshPage()">RESET</button>
+
         <button type="submit" onclick="calculate_SGPA()">SUBMIT</button>
 <!-- 
         <div class="result">
@@ -162,6 +163,12 @@
     </footer>
     
 </center>
+<script>
+    function refreshPage() {
+        // Reload the current page
+        location.reload();
+    }
+</script>
 </body>
 
 </html>
