@@ -67,7 +67,7 @@ function calculate_SGPA() {
 
 
     document.getElementById("result").innerText = `${SGPA}`;
-    document.getElementById("percentage").innerText = ` ${percentage}`;
+    document.getElementById("percentage").innerText = ` ${percentage}%`;
 // ###*******************************************************************##
     // SGPA1=parseFloat(document.getElementById("result").value);
 grade1=getPointFromSGPA(SGPA);
