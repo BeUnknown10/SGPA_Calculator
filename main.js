@@ -48,12 +48,17 @@ function calculate_SGPA() {
     var point9 = getPointFromMark(mark9);
     console.log(point9);
     
+    var credit10 = parseFloat(document.getElementById("credit10").value);
+    var mark10 = parseFloat(document.getElementById("marks10").value);
+    var point10 = getPointFromMark(mark10);
+    console.log(point10);
+    
 
     document.querySelector('.result1').style.display = 'block';
 
 
     var total_credit = credit1 + credit2 + credit3 + credit4 + credit5 + credit6 + credit7 + credit8+credit9;
-    var total_points = (credit1 * point1) + (credit2 * point2) + (credit3 * point3) + (credit4 * point4) + (credit5 * point5) + (credit6 * point6) + (credit7 * point7) + (credit8 * point8)+ (credit9 * point9);
+    var total_points = (credit1 * point1) + (credit2 * point2) + (credit3 * point3) + (credit4 * point4) + (credit5 * point5) + (credit6 * point6) + (credit7 * point7) + (credit8 * point8)+ (credit9 * point9) +(credit10 * point10);
 
     // total_credit = total_credit.toFixed(4);
     // total_points = total_points.toFixed(4);
