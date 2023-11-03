@@ -57,7 +57,7 @@ function calculate_SGPA() {
     document.querySelector('.result1').style.display = 'block';
 
 
-    var total_credit = credit1 + credit2 + credit3 + credit4 + credit5 + credit6 + credit7 + credit8+credit9;
+    var total_credit = credit1 + credit2 + credit3 + credit4 + credit5 + credit6 + credit7 + credit8+credit9+credit10;
     var total_points = (credit1 * point1) + (credit2 * point2) + (credit3 * point3) + (credit4 * point4) + (credit5 * point5) + (credit6 * point6) + (credit7 * point7) + (credit8 * point8)+ (credit9 * point9) +(credit10 * point10);
 
     // total_credit = total_credit.toFixed(4);
